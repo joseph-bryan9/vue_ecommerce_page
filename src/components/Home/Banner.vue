@@ -9,12 +9,12 @@
             data-scrollax-parent="true"
           >
             <div class="col-md-12 ftco-animate text-center">
-              <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
+              <h1 class="mb-2">{{ h1 }}</h1>
               <h2 class="subheading mb-4">
-                We deliver organic vegetables &amp; fruits
+                {{ h2 }}
               </h2>
               <p>
-                <a href="#" class="btn btn-primary">View Details</a>
+                <a href="#" class="btn btn-primary">{{ btn }}</a>
               </p>
             </div>
           </div>
@@ -44,6 +44,19 @@
   </section>
 </template>
 
+<script>
+export default {
+  name: "Banner",
+  data() {
+    return {
+      h1: "we serve fresh vegetables & fruits",
+      h2: "we deliver organic vegetables & fruits",
+      btn: "view details",
+    };
+  },
+};
+</script>
+
 <style scoped>
 .sliderOne {
   background: url("../../assets/images/bg_1.jpg");
@@ -54,11 +67,24 @@
   visibility: visible;
 }
 
-/* .sliderTwo {
-  background: url("../../assets/images/bg_2.jpg");
-} */
-
 .owl-carousel {
   display: block;
+}
+
+.owl-carousel.home-slider .slider-item .overlay {
+  opacity: 0.4;
+}
+
+.owl-carousel.home-slider .slider-item .slider-text h1 {
+  text-shadow: 5px 3px 8px #000;
+}
+
+.owl-carousel.home-slider .slider-item .slider-text .subheading {
+  font-size: 16px;
+  text-shadow: 5px 3px 8px #000;
+}
+
+.btn.btn-primary:hover {
+  background: #fff;
 }
 </style>

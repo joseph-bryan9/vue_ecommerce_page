@@ -4,61 +4,19 @@
       <div class="row no-gutters ftco-services">
         <div
           class="col-md-3 text-center d-flex align-self-stretch ftco-animate"
+          v-for="icon in icons"
+          :key="icon"
         >
           <div class="media block-6 services mb-md-0 mb-4">
             <div
-              class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2"
+              class="icon active d-flex justify-content-center align-items-center mb-2"
+              :class="icon.bgColor"
             >
-              <span class="flaticon-shipped"></span>
+              <span class="flaticon-shipped" :class="icon.class"></span>
             </div>
             <div class="media-body">
-              <h3 class="heading">Free Shipping</h3>
-              <span>On order over $100</span>
-            </div>
-          </div>
-        </div>
-        <div
-          class="col-md-3 text-center d-flex align-self-stretch ftco-animate"
-        >
-          <div class="media block-6 services mb-md-0 mb-4">
-            <div
-              class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2"
-            >
-              <span class="flaticon-diet"></span>
-            </div>
-            <div class="media-body">
-              <h3 class="heading">Always Fresh</h3>
-              <span>Product well package</span>
-            </div>
-          </div>
-        </div>
-        <div
-          class="col-md-3 text-center d-flex align-self-stretch ftco-animate"
-        >
-          <div class="media block-6 services mb-md-0 mb-4">
-            <div
-              class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2"
-            >
-              <span class="flaticon-award"></span>
-            </div>
-            <div class="media-body">
-              <h3 class="heading">Superior Quality</h3>
-              <span>Quality Products</span>
-            </div>
-          </div>
-        </div>
-        <div
-          class="col-md-3 text-center d-flex align-self-stretch ftco-animate"
-        >
-          <div class="media block-6 services mb-md-0 mb-4">
-            <div
-              class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2"
-            >
-              <span class="flaticon-customer-service"></span>
-            </div>
-            <div class="media-body">
-              <h3 class="heading">Support</h3>
-              <span>24/7 Support</span>
+              <h3 class="heading">{{ icon.h3 }}</h3>
+              <span>{{ icon.span }}</span>
             </div>
           </div>
         </div>
@@ -66,3 +24,39 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  name: "Info",
+  data() {
+    return {
+      icons: [
+        {
+          bgColor: "bg-color-1",
+          class: "flaticon-shipped",
+          h3: "free shippings",
+          span: "on order over $100",
+        },
+        {
+          bgColor: "bg-color-2",
+          class: "flaticon-diet",
+          h3: "always fresh",
+          span: "product well package",
+        },
+        {
+          bgColor: "bg-color-3",
+          class: "flaticon-award",
+          h3: "superior quality",
+          span: "quality products",
+        },
+        {
+          bgColor: "bg-color-4",
+          class: "flaticon-customer-service",
+          h3: "support",
+          span: "24/7 support",
+        },
+      ],
+    };
+  },
+};
+</script>

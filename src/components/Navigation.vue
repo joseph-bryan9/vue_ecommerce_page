@@ -4,7 +4,7 @@
     id="ftco-navbar"
   >
     <div class="container">
-      <a class="navbar-brand" href="index.html">Vegefoods</a>
+      <a class="navbar-brand" href="index.html">{{ brandname }}</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <router-link to="/" class="nav-link">Home</router-link>
+            <router-link to="/" class="nav-link">{{ home }}</router-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -30,30 +30,33 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-              >Shop</a
-            >
+            >{{ shop }}</a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">
-              <a class="dropdown-item" href="shop.html">Shop</a>
-              <a class="dropdown-item" href="wishlist.html">Wishlist</a>
-              <a class="dropdown-item" href="product-single.html"
-                >Single Product</a
-              >
-              <a class="dropdown-item" href="cart.html">Cart</a>
-              <a class="dropdown-item" href="checkout.html">Checkout</a>
+              <a
+                class="dropdown-item text-capitalize"
+                v-for="shopList in shopLists"
+                :key="shopList"
+                v-bind:href="shopList.hyperLink"
+              >{{ shopList.list }}</a>
             </div>
           </li>
           <li class="nav-item">
-            <router-link to="/about" class="nav-link">About</router-link>
+            <router-link to="/about" class="nav-link">{{ about }}</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/blog" class="nav-link">Blog</router-link>
+            <router-link to="/blog" class="nav-link">{{ blog }}</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/contact" class="nav-link">Contact</router-link>
+            <router-link to="/contact" class="nav-link">
+              {{
+              contact
+              }}
+            </router-link>
           </li>
           <li class="nav-item cta cta-colored">
             <router-link to="/cart" class="nav-link">
-              <span class="icon-shopping_cart"></span>[0]
+              <span class="icon-shopping_cart"></span>
+              {{ addToCartNo }}
             </router-link>
           </li>
         </ul>
@@ -61,3 +64,27 @@
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  name: "Navigation",
+  data() {
+    return {
+      brandname: "vegefoods",
+      home: "home",
+      shop: "shop",
+      shopLists: [
+        { hyperLink: "shop.html", list: "shop" },
+        { hyperLink: "wishlist.html", list: "wishlist" },
+        { hyperLink: "product-single.html", list: "single product" },
+        { hyperLink: "cart.html", list: "cart" },
+        { hyperLink: "checkout.html", list: "checkout" },
+      ],
+      about: "about",
+      blog: "blog",
+      contact: "contact",
+      addToCartNo: "[0]",
+    };
+  },
+};
+</script>

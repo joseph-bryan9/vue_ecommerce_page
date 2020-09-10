@@ -5,13 +5,13 @@
         <div class="col-md-8">
           <div class="row">
             <div class="col-md-6 order-md-last align-items-stretch d-flex">
-              <div
-                class="category-wrap-2 ftco-animate img align-self-stretch d-flex vegieBanner"
-              >
+              <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex vegieBanner">
                 <div class="text text-center">
                   <h2>Vegetables</h2>
                   <p>Protect the health of every home</p>
-                  <p><a href="#" class="btn btn-primary">Shop now</a></p>
+                  <p>
+                    <a href="#" class="btn btn-primary">{{ shopBtn }}</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -24,9 +24,11 @@
               >
                 <div class="text px-3 py-1">
                   <h2 class="mb-0">
-                    <a href="#" class="text-capitalize">{{
+                    <a href="#" class="text-capitalize">
+                      {{
                       firstCategory.h2
-                    }}</a>
+                      }}
+                    </a>
                   </h2>
                 </div>
               </div>
@@ -58,6 +60,7 @@ export default {
   name: "Category",
   data() {
     return {
+      shopBtn: "shop now",
       firstCategories: [
         { classOne: "mb-4", classTwo: "fruits", h2: "fruit" },
         { classTwo: "vegetables", h2: "vegetables" },

@@ -7,8 +7,8 @@
             <div class="col-md-6 order-md-last align-items-stretch d-flex">
               <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex vegieBanner">
                 <div class="text text-center">
-                  <h2>Vegetables</h2>
-                  <p>Protect the health of every home</p>
+                  <h2 class="text-capitalize">{{ title }}</h2>
+                  <p>{{ descriptionTitle }}</p>
                   <p>
                     <a href="#" class="btn btn-primary">{{ shopBtn }}</a>
                   </p>
@@ -60,7 +60,9 @@ export default {
   name: "Category",
   data() {
     return {
-      shopBtn: "shop now",
+      title: "vegetables",
+      descriptionTitle: "Protect the health of every home",
+      shopBtn: "Shop now",
       firstCategories: [
         { classOne: "mb-4", classTwo: "fruits", h2: "fruit" },
         { classTwo: "vegetables", h2: "vegetables" },

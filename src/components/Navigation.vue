@@ -30,14 +30,16 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-            >{{ shop }}</a>
+              >{{ shop }}</a
+            >
             <div class="dropdown-menu" aria-labelledby="dropdown04">
               <a
                 class="dropdown-item text-capitalize"
                 v-for="shopList in shopLists"
-                :key="shopList"
+                :key="shopList.id"
                 v-bind:href="shopList.hyperLink"
-              >{{ shopList.list }}</a>
+                >{{ shopList.list }}</a
+              >
             </div>
           </li>
           <li class="nav-item">
@@ -48,9 +50,7 @@
           </li>
           <li class="nav-item">
             <router-link to="/contact" class="nav-link">
-              {{
-              contact
-              }}
+              {{ contact }}
             </router-link>
           </li>
           <li class="nav-item cta cta-colored">
@@ -74,11 +74,11 @@ export default {
       home: "home",
       shop: "shop",
       shopLists: [
-        { hyperLink: "shop.html", list: "shop" },
-        { hyperLink: "wishlist.html", list: "wishlist" },
-        { hyperLink: "product-single.html", list: "single product" },
-        { hyperLink: "cart.html", list: "cart" },
-        { hyperLink: "checkout.html", list: "checkout" },
+        { id: 1, hyperLink: "shop.html", list: "shop" },
+        { id: 2, hyperLink: "wishlist.html", list: "wishlist" },
+        { id: 3, hyperLink: "product-single.html", list: "single product" },
+        { id: 4, hyperLink: "cart.html", list: "cart" },
+        { id: 5, hyperLink: "checkout.html", list: "checkout" },
       ],
       about: "about",
       blog: "blog",

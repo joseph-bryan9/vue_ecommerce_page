@@ -16,7 +16,7 @@
         <div
           class="col-md-6 col-lg-3 ftco-animate"
           v-for="product in products"
-          :key="product"
+          :key="product.id"
         >
           <div class="product">
             <a href="#" class="img-prod"
@@ -83,6 +83,7 @@ export default {
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia",
       products: [
         {
+          id: 1,
           image: require("../../assets/images/product-1.jpg"),
           show: true,
           sale: "30%",
@@ -91,24 +92,28 @@ export default {
           currentPrice: "$80.00",
         },
         {
+          id: 2,
           image: require("../../assets/images/product-2.jpg"),
           show: false,
           h3: "strawberry",
           currentPrice: "$120.00",
         },
         {
+          id: 3,
           image: require("../../assets/images/product-3.jpg"),
           show: false,
           h3: "green beans",
           currentPrice: "$120.00",
         },
         {
+          id: 4,
           image: require("../../assets/images/product-4.jpg"),
           show: false,
           h3: "purple cabbage",
           currentPrice: "$120.00",
         },
         {
+          id: 5,
           image: require("../../assets/images/product-5.jpg"),
           show: true,
           sale: "30%",
@@ -117,18 +122,21 @@ export default {
           currentPrice: "$80.00",
         },
         {
+          id: 6,
           image: require("../../assets/images/product-6.jpg"),
           show: false,
           h3: "brocolli",
           currentPrice: "$120.00",
         },
         {
+          id: 7,
           image: require("../../assets/images/product-7.jpg"),
           show: false,
           h3: "carrots",
           currentPrice: "$120.00",
         },
         {
+          id: 8,
           image: require("../../assets/images/product-8.jpg"),
           show: false,
           h3: "fruit juice",

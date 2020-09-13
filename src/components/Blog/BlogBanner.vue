@@ -1,7 +1,7 @@
 <template>
   <div
     class="hero-wrap hero-bread"
-    style="background-image: url('../../assets/images/bg_1.jpg');"
+    :style="{ backgroundImage: `url(${bgImage})` }"
   >
     <div class="container">
       <div
@@ -9,12 +9,28 @@
       >
         <div class="col-md-9 ftco-animate text-center">
           <p class="breadcrumbs">
-            <span class="mr-2"><a href="index.html">Home</a></span>
+            <span class="mr-2"
+              ><a href="index.html">{{ link }}</a></span
+            >
             <span>Blog</span>
           </p>
-          <h1 class="mb-0 bread">Blog</h1>
+          <h1 class="mb-0 bread">{{ h1 }}</h1>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "BlogBanner",
+  data() {
+    return {
+      bgImage: require("../../assets/images/bg_1.jpg"),
+      link: "home",
+      span: "blog",
+      h1: "blog",
+    };
+  },
+};
+</script>

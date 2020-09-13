@@ -5,7 +5,9 @@
         <div class="col-md-8">
           <div class="row">
             <div class="col-md-6 order-md-last align-items-stretch d-flex">
-              <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex vegieBanner">
+              <div
+                class="category-wrap-2 ftco-animate img align-self-stretch d-flex vegieBanner"
+              >
                 <div class="text text-center">
                   <h2 class="text-capitalize">{{ title }}</h2>
                   <p>{{ descriptionTitle }}</p>
@@ -20,14 +22,12 @@
                 class="category-wrap ftco-animate img d-flex align-items-end"
                 :class="[firstCategory.classOne, firstCategory.classTwo]"
                 v-for="firstCategory in firstCategories"
-                :key="firstCategory"
+                :key="firstCategory.id"
               >
                 <div class="text px-3 py-1">
                   <h2 class="mb-0">
                     <a href="#" class="text-capitalize">
-                      {{
-                      firstCategory.h2
-                      }}
+                      {{ firstCategory.h2 }}
                     </a>
                   </h2>
                 </div>
@@ -41,7 +41,7 @@
             class="category-wrap ftco-animate img mb-4 d-flex align-items-end juices"
             :class="[secondCategory.classOne, secondCategory.classTwo]"
             v-for="secondCategory in secondCategories"
-            :key="secondCategory"
+            :key="secondCategory.id"
           >
             <div class="text px-3 py-1">
               <h2 class="mb-0">
@@ -64,12 +64,12 @@ export default {
       descriptionTitle: "Protect the health of every home",
       shopBtn: "Shop now",
       firstCategories: [
-        { classOne: "mb-4", classTwo: "fruits", h2: "fruit" },
-        { classTwo: "vegetables", h2: "vegetables" },
+        { id: 1, classOne: "mb-4", classTwo: "fruits", h2: "fruit" },
+        { id: 2, classTwo: "vegetables", h2: "vegetables" },
       ],
       secondCategories: [
-        { classOne: "mb-4", classTwo: "juices", h2: "juice" },
-        { classTwo: "dried", h2: "driedz" },
+        { id: 1, classOne: "mb-4", classTwo: "juices", h2: "juice" },
+        { id: 2, classTwo: "dried", h2: "driedz" },
       ],
     };
   },

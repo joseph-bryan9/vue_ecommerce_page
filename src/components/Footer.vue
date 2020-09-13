@@ -20,7 +20,7 @@
             <ul
               class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
             >
-              <li class="ftco-animate" v-for="icon in icons" :key="icon">
+              <li class="ftco-animate" v-for="icon in icons" :key="icon.id">
                 <a href="#">
                   <span :class="icon.socialIcon"></span>
                 </a>
@@ -32,7 +32,7 @@
           <div class="ftco-footer-widget mb-4 ml-md-5">
             <h2 class="ftco-heading-2 text-capitalize">{{ menuTitle }}</h2>
             <ul class="list-unstyled">
-              <li v-for="menuList in menuLists" :key="menuList">
+              <li v-for="menuList in menuLists" :key="menuList.id">
                 <a href="#" class="py-2 d-block text-capitalize">{{
                   menuList.menu
                 }}</a>
@@ -45,14 +45,14 @@
             <h2 class="ftco-heading-2 text-capitalize">{{ helpTitle }}</h2>
             <div class="d-flex">
               <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-                <li v-for="helpListOne in helpListsOne" :key="helpListOne">
+                <li v-for="helpListOne in helpListsOne" :key="helpListOne.id">
                   <a href="#" class="py-2 d-block text-capitalize">{{
                     helpListOne.helpInfo
                   }}</a>
                 </li>
               </ul>
               <ul class="list-unstyled">
-                <li v-for="helpListTwo in helpListsTwo" :key="helpListTwo">
+                <li v-for="helpListTwo in helpListsTwo" :key="helpListTwo.id">
                   <a href="#" class="py-2 d-block text-capitalize">{{
                     helpListTwo.helpInfo
                   }}</a>
@@ -115,27 +115,30 @@ export default {
       p:
         "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.",
       icons: [
-        { socialIcon: "icon-twitter" },
-        { socialIcon: "icon-facebook" },
-        { socialIcon: "icon-instagram" },
+        { id: 1, socialIcon: "icon-twitter" },
+        { id: 2, socialIcon: "icon-facebook" },
+        { id: 3, socialIcon: "icon-instagram" },
       ],
       // Second Column
       menuTitle: "menu",
       menuLists: [
-        { menu: "shop" },
-        { menu: "about" },
-        { menu: "journal" },
-        { menu: "contact us" },
+        { id: 1, menu: "shop" },
+        { id: 2, menu: "about" },
+        { id: 3, menu: "journal" },
+        { id: 4, menu: "contact us" },
       ],
       // Third Column
       helpTitle: "help",
       helpListsOne: [
-        { helpInfo: "shipping information" },
-        { helpInfo: "returns & exchange" },
-        { helpInfo: "terms & conditions" },
-        { helpInfo: "privacy policy" },
+        { id: 1, helpInfo: "shipping information" },
+        { id: 2, helpInfo: "returns & exchange" },
+        { id: 3, helpInfo: "terms & conditions" },
+        { id: 4, helpInfo: "privacy policy" },
       ],
-      helpListsTwo: [{ helpInfo: "FAQs" }, { helpInfo: "contact" }],
+      helpListsTwo: [
+        { id: 1, helpInfo: "FAQs" },
+        { id: 2, helpInfo: "contact" },
+      ],
       // Fourth Column
       questionTitle: "Have a Question?",
       address: "203 Fake St. Mountain View, San Francisco, California, USA",

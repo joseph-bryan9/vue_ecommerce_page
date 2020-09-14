@@ -4,228 +4,38 @@
       <div class="row">
         <div class="col-lg-8 ftco-animate">
           <div class="row">
-            <!-- <div class="col-md-12 d-flex ftco-animate" v-for="blog in blogs" :key="blog.id">
+            <div class="col-md-12 d-flex ftco-animate" v-for="blog in blogs" :key="blog.id">
               <div class="blog-entry align-self-stretch d-md-flex">
                 <a
                   href="blog-single.html"
                   class="block-20"
-                  :style="{backroundImage: `url(${bgImage})`}"
-                >
-                </a>
+                  :style="{ backroundImage: `url(${blog.bgImage})` }"
+                ></a>
                 <div class="text d-block pl-md-4">
                   <div class="meta mb-3">
-                    <div><a href="#">July 20, 2019{{ date }}</a></div>
-                    <div><a href="#">Admin{{ author }}</a></div>
                     <div>
-                      <a href="#" class="meta-chat"
-                        ><span class="icon-chat"></span> 3</a
-                      >
+                      <a href="#" class="text-capitalize">{{ blog.date }}</a>
+                    </div>
+                    <div>
+                      <a href="#" class="text-capitalize">{{ blog.author }}</a>
+                    </div>
+                    <div>
+                      <a href="#" class="meta-chat">
+                        <span class="icon-chat"></span>
+                        {{ blog.commentCount }}
+                      </a>
                     </div>
                   </div>
                   <h3 class="heading">
-                    <a href="#"
-                      >Even the all-powerful Pointing has no control about the
-                      blind texts</a
-                    >
+                    <a href="#">{{ blog.link }}</a>
                   </h3>
+                  <p>{{ blog.p }}</p>
                   <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p>
-                    <a href="blog-single.html" class="btn btn-primary py-2 px-3"
-                      >Read more</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div> -->
-            <!-- <div class="col-md-12 d-flex ftco-animate">
-              <div class="blog-entry align-self-stretch d-md-flex">
-                <a
-                  href="blog-single.html"
-                  class="block-20"
-                  style="background-image: url('../../assets/images/image_2.jpg');"
-                >
-                </a>
-                <div class="text d-block pl-md-4">
-                  <div class="meta mb-3">
-                    <div><a href="#">July 20, 2019</a></div>
-                    <div><a href="#">Admin</a></div>
-                    <div>
-                      <a href="#" class="meta-chat"
-                        ><span class="icon-chat"></span> 3</a
-                      >
-                    </div>
-                  </div>
-                  <h3 class="heading">
-                    <a href="#"
-                      >Even the all-powerful Pointing has no control about the
-                      blind texts</a
-                    >
-                  </h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p>
-                    <a href="blog-single.html" class="btn btn-primary py-2 px-3"
-                      >Read more</a
-                    >
+                    <a href="blog-single.html" class="btn btn-primary py-2 px-3">{{ blog.readBtn }}</a>
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-12 d-flex ftco-animate">
-              <div class="blog-entry align-self-stretch d-md-flex">
-                <a
-                  href="blog-single.html"
-                  class="block-20"
-                  style="background-image: url('../../assets/images/image_3.jpg');"
-                >
-                </a>
-                <div class="text d-block pl-md-4">
-                  <div class="meta mb-3">
-                    <div><a href="#">July 20, 2019</a></div>
-                    <div><a href="#">Admin</a></div>
-                    <div>
-                      <a href="#" class="meta-chat"
-                        ><span class="icon-chat"></span> 3</a
-                      >
-                    </div>
-                  </div>
-                  <h3 class="heading">
-                    <a href="#"
-                      >Even the all-powerful Pointing has no control about the
-                      blind texts</a
-                    >
-                  </h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p>
-                    <a href="blog-single.html" class="btn btn-primary py-2 px-3"
-                      >Read more</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 d-flex ftco-animate">
-              <div class="blog-entry align-self-stretch d-md-flex">
-                <a
-                  href="blog-single.html"
-                  class="block-20"
-                  style="background-image: url('../../assets/images/image_4.jpg');"
-                >
-                </a>
-                <div class="text d-block pl-md-4">
-                  <div class="meta mb-3">
-                    <div><a href="#">July 20, 2019</a></div>
-                    <div><a href="#">Admin</a></div>
-                    <div>
-                      <a href="#" class="meta-chat"
-                        ><span class="icon-chat"></span> 3</a
-                      >
-                    </div>
-                  </div>
-                  <h3 class="heading">
-                    <a href="#"
-                      >Even the all-powerful Pointing has no control about the
-                      blind texts</a
-                    >
-                  </h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p>
-                    <a href="blog-single.html" class="btn btn-primary py-2 px-3"
-                      >Read more</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 d-flex ftco-animate">
-              <div class="blog-entry align-self-stretch d-md-flex">
-                <a
-                  href="blog-single.html"
-                  class="block-20"
-                  style="background-image: url('../../assets/images/image_5.jpg');"
-                >
-                </a>
-                <div class="text d-block pl-md-4">
-                  <div class="meta mb-3">
-                    <div><a href="#">July 20, 2019</a></div>
-                    <div><a href="#">Admin</a></div>
-                    <div>
-                      <a href="#" class="meta-chat"
-                        ><span class="icon-chat"></span> 3</a
-                      >
-                    </div>
-                  </div>
-                  <h3 class="heading">
-                    <a href="#"
-                      >Even the all-powerful Pointing has no control about the
-                      blind texts</a
-                    >
-                  </h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p>
-                    <a href="blog-single.html" class="btn btn-primary py-2 px-3"
-                      >Read more</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 d-flex ftco-animate">
-              <div class="blog-entry align-self-stretch d-md-flex">
-                <a
-                  href="blog-single.html"
-                  class="block-20"
-                  style="background-image: url('../../assets/images/image_6.jpg');"
-                >
-                </a>
-                <div class="text d-block pl-md-4">
-                  <div class="meta mb-3">
-                    <div><a href="#">July 20, 2019</a></div>
-                    <div><a href="#">Admin</a></div>
-                    <div>
-                      <a href="#" class="meta-chat"
-                        ><span class="icon-chat"></span> 3</a
-                      >
-                    </div>
-                  </div>
-                  <h3 class="heading">
-                    <a href="#"
-                      >Even the all-powerful Pointing has no control about the
-                      blind texts</a
-                    >
-                  </h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p>
-                    <a href="blog-single.html" class="btn btn-primary py-2 px-3"
-                      >Read more</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
         <!-- .col-md-8 -->
@@ -234,57 +44,56 @@
             <form action="#" class="search-form">
               <div class="form-group">
                 <span class="icon ion-ios-search"></span>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Search..."
-                />
+                <input type="text" class="form-control" placeholder="Search..." />
               </div>
             </form>
           </div>
           <div class="sidebar-box ftco-animate">
-            <h3 class="heading">Categories</h3>
+            <h3 class="heading text-capitalize">{{ h3Category }}</h3>
             <ul class="categories">
-              <li>
-                <a href="#">Vegetables <span>(12)</span></a>
+              <li v-for="category in categories" :key="category.id">
+                <a href="#" class="text-capitalize">
+                  {{ category.name }}
+                  <span>{{ category.qty }}</span>
+                </a>
               </li>
-              <!-- <li>
-                <a href="#">Fruits <span>(22)</span></a>
-              </li>
-              <li>
-                <a href="#">Juice <span>(37)</span></a>
-              </li>
-              <li>
-                <a href="#">Dries <span>(42)</span></a>
-              </li> -->
             </ul>
           </div>
 
           <div class="sidebar-box ftco-animate">
-            <h3 class="heading">Recent Blog</h3>
-            <div class="block-21 mb-4 d-flex">
+            <h3 class="heading text-capitalize">{{ h3Blog }}</h3>
+            <div
+              class="block-21 mb-4 d-flex"
+              v-for="recentBlog in recentBlogs"
+              :key="recentBlog.id"
+            >
               <a
                 class="blog-img mr-4"
                 style="background-image: url(../../assets/images/image_1.jpg);"
+                :style="{ backroundImage: `url(${recentBlog.bgImage})` }"
               ></a>
               <div class="text">
                 <h3 class="heading-1">
-                  <a href="#"
-                    >Even the all-powerful Pointing has no control about the
-                    blind texts</a
-                  >
+                  <a href="#">
+                    Even the all-powerful Pointing has no control about the
+                    blind texts
+                  </a>
                 </h3>
                 <div class="meta">
                   <div>
-                    <a href="#"
-                      ><span class="icon-calendar"></span> April 09, 2019</a
-                    >
+                    <a href="#">
+                      <span class="icon-calendar"></span> April 09, 2019
+                    </a>
                   </div>
                   <div>
-                    <a href="#"><span class="icon-person"></span> Admin</a>
+                    <a href="#">
+                      <span class="icon-person"></span> Admin
+                    </a>
                   </div>
                   <div>
-                    <a href="#"><span class="icon-chat"></span> 19</a>
+                    <a href="#">
+                      <span class="icon-chat"></span> 19
+                    </a>
                   </div>
                 </div>
               </div>
@@ -342,7 +151,7 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>-->
           </div>
 
           <div class="sidebar-box ftco-animate">
@@ -355,7 +164,7 @@
               <a href="#" class="tag-cloud-link">carrots</a>
               <a href="#" class="tag-cloud-link">orange</a>
               <a href="#" class="tag-cloud-link">pepper</a>
-              <a href="#" class="tag-cloud-link">eggplant</a> -->
+              <a href="#" class="tag-cloud-link">eggplant</a>-->
             </div>
           </div>
 
@@ -379,7 +188,98 @@ export default {
   name: "BlogPosts",
   data() {
     return {
-      bgImage: "../../assets/images/image_1.jpg",
+      blogs: [
+        {
+          id: 1,
+          bgImage: require("../../assets/images/image_1.jpg"),
+          date: "july 20, 2019",
+          author: "admin",
+          commentCount: 3,
+          link:
+            "Even the all-powerful Pointing has no control about the blind texts",
+          p:
+            "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+          readBtn: "Read more",
+        },
+        {
+          id: 2,
+          bgImage: require("../../assets/images/image_2.jpg"),
+          date: "july 12, 2019",
+          author: "admin",
+          commentCount: 6,
+          link:
+            "Even the all-powerful Pointing has no control about the blind texts",
+          p:
+            "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+          readBtn: "Read more",
+        },
+        {
+          id: 3,
+          bgImage: require("../../assets/images/image_3.jpg"),
+          date: "june 28, 2019",
+          author: "admin",
+          commentCount: 8,
+          link:
+            "Even the all-powerful Pointing has no control about the blind texts",
+          p:
+            "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+          readBtn: "Read more",
+        },
+        {
+          id: 4,
+          bgImage: require("../../assets/images/image_4.jpg"),
+          date: "june 15, 2019",
+          author: "admin",
+          commentCount: 2,
+          link:
+            "Even the all-powerful Pointing has no control about the blind texts",
+          p:
+            "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+          readBtn: "Read more",
+        },
+        {
+          id: 5,
+          bgImage: require("../../assets/images/image_5.jpg"),
+          date: "june 10, 2019",
+          author: "admin",
+          commentCount: 4,
+          link:
+            "Even the all-powerful Pointing has no control about the blind texts",
+          p:
+            "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+          readBtn: "Read more",
+        },
+        {
+          id: 6,
+          bgImage: require("../../assets/images/image_6.jpg"),
+          date: "may 25, 2019",
+          author: "admin",
+          commentCount: 9,
+          link:
+            "Even the all-powerful Pointing has no control about the blind texts",
+          p:
+            "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+          readBtn: "Read more",
+        },
+      ],
+      h3Category: "categories",
+      categories: [
+        { id: 1, name: "vegetables", qty: "(12)" },
+        { id: 2, name: "fruits", qty: "(22)" },
+        { id: 3, name: "juice", qty: "(37)" },
+        { id: 4, name: "dries", qty: "(42)" },
+      ],
+      h3Blog: "recent blog",
+      recentBlogs: [
+        {
+          id: 1,
+          bgImage: require("../../assets/images/image_1.jpg"),
+          link: "",
+          date: "",
+          author: "",
+          commentCount: "",
+        },
+      ],
     };
   },
 };

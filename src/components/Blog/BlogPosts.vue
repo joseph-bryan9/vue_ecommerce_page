@@ -74,25 +74,25 @@
               ></a>
               <div class="text">
                 <h3 class="heading-1">
-                  <a href="#">
-                    Even the all-powerful Pointing has no control about the
-                    blind texts
-                  </a>
+                  <a href="#">{{ link }}</a>
                 </h3>
                 <div class="meta">
                   <div>
                     <a href="#">
-                      <span class="icon-calendar"></span> April 09, 2019
+                      <span class="icon-calendar"></span>
+                      {{ date }}
                     </a>
                   </div>
                   <div>
                     <a href="#">
-                      <span class="icon-person"></span> Admin
+                      <span class="icon-person"></span>
+                      {{ author }}
                     </a>
                   </div>
                   <div>
                     <a href="#">
-                      <span class="icon-chat"></span> 19
+                      <span class="icon-chat"></span>
+                      {{ commentCount }}
                     </a>
                   </div>
                 </div>
@@ -274,10 +274,29 @@ export default {
         {
           id: 1,
           bgImage: require("../../assets/images/image_1.jpg"),
-          link: "",
-          date: "",
-          author: "",
-          commentCount: "",
+          link:
+            "Even the all-powerful Pointing has no control about the blind texts",
+          date: "April 09, 2019",
+          author: "Admin",
+          commentCount: 19,
+        },
+        {
+          id: 2,
+          bgImage: require("../../assets/images/image_2.jpg"),
+          link:
+            "Even the all-powerful Pointing has no control about the blind texts",
+          date: "April 09, 2019",
+          author: "Admin",
+          commentCount: 19,
+        },
+        {
+          id: 3,
+          bgImage: require("../../assets/images/image_3.jpg"),
+          link:
+            "Even the all-powerful Pointing has no control about the blind texts",
+          date: "April 09, 2019",
+          author: "Admin",
+          commentCount: 19,
         },
       ],
     };

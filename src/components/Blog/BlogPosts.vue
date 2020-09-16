@@ -155,9 +155,14 @@
           </div>
 
           <div class="sidebar-box ftco-animate">
-            <h3 class="heading">Tag Cloud</h3>
+            <h3 class="heading text-capitalize">{{ h3Food }}</h3>
             <div class="tagcloud">
-              <a href="#" class="tag-cloud-link">fruits</a>
+              <a
+                href="#"
+                class="tag-cloud-link"
+                v-for="food in foods"
+                :key="food.id"
+              >{{ food.food }}</a>
               <!-- <a href="#" class="tag-cloud-link">tomatoe</a>
               <a href="#" class="tag-cloud-link">mango</a>
               <a href="#" class="tag-cloud-link">apple</a>
@@ -169,13 +174,8 @@
           </div>
 
           <div class="sidebar-box ftco-animate">
-            <h3 class="heading">Paragraph</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
-              itaque, autem necessitatibus voluptate quod mollitia delectus aut,
-              sunt placeat nam vero culpa sapiente consectetur similique,
-              inventore eos fugit cupiditate numquam!
-            </p>
+            <h3 class="heading text-capitalize">{{ h3Paragraph }}</h3>
+            <p>{{ p }}</p>
           </div>
         </div>
       </div>
@@ -299,6 +299,20 @@ export default {
           commentCount: 19,
         },
       ],
+      h3Food: "tag cloud",
+      foods: [
+        { id: 1, food: "fruits" },
+        { id: 2, food: "tomato" },
+        { id: 3, food: "mango" },
+        { id: 4, food: "apple" },
+        { id: 5, food: "carrot" },
+        { id: 6, food: "orange" },
+        { id: 7, food: "pepper" },
+        { id: 8, food: "eggplant" },
+      ],
+      h3Paragraph: "paragraph",
+      p:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!",
     };
   },
 };

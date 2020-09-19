@@ -67,11 +67,7 @@
               v-for="recentBlog in recentBlogs"
               :key="recentBlog.id"
             >
-              <a
-                class="blog-img mr-4"
-                style="background-image: url(../../assets/images/image_1.jpg);"
-                :style="{ backroundImage: `url(${recentBlog.bgImage})` }"
-              ></a>
+              <a class="blog-img mr-4" :style="{ backroundImage: `url(${recentBlog.bgImage})` }"></a>
               <div class="text">
                 <h3 class="heading-1">
                   <a href="#">{{ link }}</a>

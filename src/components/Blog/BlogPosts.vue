@@ -269,7 +269,7 @@ export default {
       recentBlogs: [
         {
           id: 1,
-          bgImage: require("../../assets/images/image_1.jpg"),
+          bgImage: require("../../assets/images/image_3.jpg"),
           link:
             "Even the all-powerful Pointing has no control about the blind texts",
           date: "April 09, 2019",

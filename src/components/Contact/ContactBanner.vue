@@ -1,20 +1,31 @@
 <template>
-  <div
-    class="hero-wrap hero-bread"
-    style="background-image: url('../../assets/images/bg_1.jpg');"
-  >
+  <div class="hero-wrap hero-bread" :style="{ backgroundImage : `url(${bgImage})`}">
     <div class="container">
-      <div
-        class="row no-gutters slider-text align-items-center justify-content-center"
-      >
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center">
           <p class="breadcrumbs">
-            <span class="mr-2"><a href="index.html">Home</a></span>
-            <span>Contact us</span>
+            <span class="mr-2">
+              <a href="index.html">{{ link }}</a>
+            </span>
+            <span>{{ span }}</span>
           </p>
-          <h1 class="mb-0 bread">Contact us</h1>
+          <h1 class="mb-0 bread">{{ h1 }}</h1>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "ContactBanner",
+  data() {
+    return {
+      bgImage: require("../../assets/images/bg_1.jpg"),
+      link: "home",
+      span: "Contact us",
+      h1: "Contact us",
+    };
+  },
+};
+</script>

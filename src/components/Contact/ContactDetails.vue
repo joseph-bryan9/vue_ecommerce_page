@@ -3,22 +3,26 @@
     <div class="container">
       <div class="row d-flex mb-5 contact-info">
         <div class="w-100"></div>
-        <div class="col-md-3 d-flex">
-          <div
-            class="info bg-white p-4"
-            v-for="contactDetail in contactDetails"
-            :key="contactDetail.id"
-          >
+        <div
+          class="col-md-3 d-flex"
+          v-for="contactDetail in contactDetails"
+          :key="contactDetail.id"
+        >
+          <div class="info bg-white p-4">
             <p>
-              <span>Address:</span> 198 West 21th Street, Suite 721 New York NY
-              10016
+              <span>{{ contactDetail.span }}</span>
+              {{ contactDetail.p }}
+              <a :href="'/contactDetails/' + contactDetail.id">{{
+                contactDetail.hrefContent
+              }}</a>
             </p>
           </div>
         </div>
         <!-- <div class="col-md-3 d-flex">
           <div class="info bg-white p-4">
             <p>
-              <span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a>
+              <span>Phone:</span>
+              <a href="tel://1234567920">+ 1235 2355 98</a>
             </p>
           </div>
         </div>
@@ -32,7 +36,10 @@
         </div>
         <div class="col-md-3 d-flex">
           <div class="info bg-white p-4">
-            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+            <p>
+              <span>Website</span>
+              <a href="#">yoursite.com</a>
+            </p>
           </div>
         </div>-->
       </div>
@@ -43,16 +50,31 @@
               <input type="text" class="form-control" placeholder="Your Name" />
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Email" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Your Email"
+              />
             </div>
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Subject" />
             </div>
             <div class="form-group">
-              <textarea name id cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+              <textarea
+                name
+                id
+                cols="30"
+                rows="7"
+                class="form-control"
+                placeholder="Message"
+              ></textarea>
             </div>
             <div class="form-group">
-              <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" />
+              <input
+                type="submit"
+                value="Send Message"
+                class="btn btn-primary py-3 px-5"
+              />
             </div>
           </form>
         </div>
@@ -69,7 +91,28 @@
 export default {
   name: "ContactDetails",
   data() {
-    return {};
+    return {
+      contactDetails: [
+        {
+          id: 1,
+          span: "Address:",
+          p: "198 West 21th Street, Suite 721 New York NY 10016",
+        },
+        {
+          id: 2,
+          span: "Phone:",
+          hrefLink: "tel://1234567920",
+          hrefContent: "+ 1235 2355 98",
+        },
+        {
+          id: 3,
+          span: "Email:",
+          hrefLink: "mailto:info@yoursite.com",
+          hrefContent: "info@yoursite.com",
+        },
+        { id: 3, span: "Website", hrefLink: "#", hrefContent: "yoursite.com" },
+      ],
+    };
   },
 };
 </script>
